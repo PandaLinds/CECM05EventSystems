@@ -28,6 +28,16 @@ public class EventPublisher : MonoBehaviour
         {
             EventBus.TriggerEvent("Panic");
         }
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            EventBus.AddAudioEvent("Audio");
+        }
+
+        if((int)(Time.time) % 3 == 0)
+        {
+            EventBus.TriggerAudioEvent();
+        }
     }
 
     //game instructions
