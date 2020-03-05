@@ -56,18 +56,22 @@ public class EventBus : Singleton<EventBus>
 
     public static void AddAudioEvent(string eventName)
     {
+        Debug.Log("  EventBus.AddAudio");
         UnityEvent thisEvent = null;
+        Debug.Log(eventName);
         if (Instance.m_EventDictionary.TryGetValue(eventName, out thisEvent))
         {
-            Debug.Log("Adding audio");
+            Debug.Log("  EventBus.If.Adding audio");
             m_AudioEvent.Add(eventName);
         }
     }
 
     public static void TriggerAudioEvent()
     {
+        Debug.Log("  EventBus.Trigger");
         if(m_AudioEvent.Count >0)
         {
+            Debug.Log("  EventBus.If.Trigger");
             string currentEvent = m_AudioEvent[0]; 
             UnityEvent thisEvent;
             m_AudioEvent.RemoveAt(0);

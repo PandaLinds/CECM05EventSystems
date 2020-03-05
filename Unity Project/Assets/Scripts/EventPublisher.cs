@@ -29,13 +29,15 @@ public class EventPublisher : MonoBehaviour
             EventBus.TriggerEvent("Panic");
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Y))
         {
+            Debug.Log("   Event Pub adding audio");
             EventBus.AddAudioEvent("Audio");
         }
 
-        if((int)(Time.time) % 3 == 0)
+        if((int)Time.time % 8 == 0)
         {
+            Debug.Log("   Trying to trigger audio");
             EventBus.TriggerAudioEvent();
         }
     }
