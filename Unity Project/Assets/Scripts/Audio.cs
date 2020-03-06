@@ -22,6 +22,11 @@ public class Audio : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        EventBus.TriggerAudioEvent();
+    }
+
     void PlayAudio()
     {
         Debug.Log("AUDIO");

@@ -29,17 +29,12 @@ public class EventPublisher : MonoBehaviour
             EventBus.TriggerEvent("Panic");
         }
 
-        if(Input.GetKey(KeyCode.Y))
+        if(Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("   Event Pub adding audio");
             EventBus.AddAudioEvent("Audio");
         }
-
-        if((int)Time.time % 8 == 0)
-        {
-            Debug.Log("   Trying to trigger audio");
-            EventBus.TriggerAudioEvent();
-        }
+            
     }
 
     //game instructions
@@ -51,6 +46,7 @@ public class EventPublisher : MonoBehaviour
         GUI.Label(new Rect(10, 40, 500, 20), "W - Surrender (Only once)");
         GUI.Label(new Rect(10, 55, 500, 20), "M - Fire Missile");
         GUI.Label(new Rect(10, 70, 500, 20), "P - General Panic");
-        GUI.Label(new Rect(10, 85, 500, 20), "Output is in Debug.Log!");
+        GUI.Label(new Rect(10, 85, 500, 20), "A - Audio");
+        GUI.Label(new Rect(10, 100, 500, 20), "Output is in Debug.Log!");
     }
 }
