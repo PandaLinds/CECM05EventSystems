@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventBus : Singleton<EventBus>
 {
     private Dictionary<string, UnityEvent> m_EventDictionary;
-    private static List<string> m_AudioEvent = new List<string>();
+    
 
     public override void Awake()
     {
@@ -54,27 +54,5 @@ public class EventBus : Singleton<EventBus>
         }
     }
 
-    public static void AddAudioEvent(string eventName)
-    {
-        UnityEvent thisEvent = null;
-        Debug.Log(eventName);
-        if (Instance.m_EventDictionary.TryGetValue(eventName, out thisEvent))
-        {
-            m_AudioEvent.Add(eventName);
-        }
-    }
-
-    public static void TriggerAudioEvent()
-    {
-        if(m_AudioEvent.Count >0)
-        {
-            string currentEvent = m_AudioEvent[0]; 
-            UnityEvent thisEvent;
-            m_AudioEvent.RemoveAt(0);
-            if (Instance.m_EventDictionary.TryGetValue(currentEvent, out thisEvent))
-            {
-                thisEvent.Invoke();
-            }
-        }
-    }
+    
 }

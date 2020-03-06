@@ -31,8 +31,7 @@ public class EventPublisher : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.A))
         {
-            Debug.Log("   Event Pub adding audio");
-            EventBus.AddAudioEvent("Audio");
+            EventBus.TriggerEvent("Audio");
         }
             
     }
