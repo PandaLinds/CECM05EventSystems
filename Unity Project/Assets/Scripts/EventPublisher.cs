@@ -45,7 +45,7 @@ public class EventPublisher : MonoBehaviour
         GUI.Label(new Rect(10, 40, 500, 20), "W - Surrender (Only once)");
         GUI.Label(new Rect(10, 55, 500, 20), "M - Fire Missile");
         GUI.Label(new Rect(10, 70, 500, 20), "P - General Panic");
-        GUI.Label(new Rect(10, 85, 500, 20), "A - Audio");
+        GUI.Label(new Rect(10, 85, 500, 20), "A - Audio (prints every 4 seconds current comp doesn't like .wav)");
         GUI.Label(new Rect(10, 100, 500, 20), "Output is in Debug.Log!");
     }
 }
