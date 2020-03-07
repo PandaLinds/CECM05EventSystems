@@ -8,6 +8,12 @@ public class Audio : MonoBehaviour
 {
     private static List<string> m_AudioEvent = new List<string>();
     private bool m_IsQuitting;
+    private static bool call = false;
+
+    void Start()
+    {
+        InvokeRepeating("TriggerAudioEvent", 3.0f, 3.0f);
+    }
 
     void OnEnable()
     {
@@ -31,8 +37,7 @@ public class Audio : MonoBehaviour
     {
         //invoke with function name & time
         //time.time % 3 w/ bool
-        //corotiens
-        TriggerAudioEvent();
+        //TriggerAudioEvent();
     }
 
     void PlayAudio()
@@ -42,16 +47,10 @@ public class Audio : MonoBehaviour
 
     void AddAudioEvent()//string eventName)
     {
-        //UnityEvent thisEvent = null;
-        //Debug.Log(eventName);
-        //if (Instance.m_EventDictionary.TryGetValue(eventName, out thisEvent))
-        //{
-        //    m_AudioEvent.Add(eventName);
-        //}
         m_AudioEvent.Add("Audio");
     }
 
-    public static void TriggerAudioEvent()
+    public void TriggerAudioEvent()
     {
         if (m_AudioEvent.Count > 0)
         {
